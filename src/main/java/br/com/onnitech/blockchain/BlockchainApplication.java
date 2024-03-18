@@ -1,6 +1,7 @@
 package br.com.onnitech.blockchain;
 
 import br.com.onnitech.blockchain.business.Blockchain;
+import br.com.onnitech.blockchain.models.Block;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -25,6 +26,12 @@ public class BlockchainApplication implements CommandLineRunner {
 
 		logger.info("Blockchain valid ? " + blockchain.isBlockChainValid());
 		logger.info(blockchain.toString());
+
+		blockchain.addBlock(new Block(15, System.currentTimeMillis(), "aaaabbb", "Block invalid"));
+		logger.info(blockchain.toString());
+		logger.info("Blockchain valid ? " + blockchain.isBlockChainValid());
+
+
 
 
 
